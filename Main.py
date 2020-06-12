@@ -522,7 +522,7 @@ def experiment_2():
     test_set_exp2()
 
 experiment_2()
-
+print("\n"+"\n")
 
 #PERFORMANCE EXPERIMENT
 def plotting():
@@ -543,6 +543,8 @@ def plotting():
         yb.append(len(txt_list))
     ax = plot.subplot(1,2,1)
     ax.set_title("Removed words <1,5,10,15,20")
+    ax.set_xlabel("Number of correct predictions")
+    ax.set_ylabel("Number of total words")
     plot.plot(xb,yb)
 
     top = [5,10,15,20,25]
@@ -555,7 +557,7 @@ def plotting():
     yt = []
     for i in range(5):
         right = 0
-        percent = (100-math.ceil((top[i]/100))*len(word_num))
+        percent = (math.ceil((((100-top[i])/100))*len(word_num)))
         for j in txt_list:
             if word_num[percent]<=(j[2]+j[4]+j[6]+j[8]):
                 txt_list.remove(j)
@@ -563,9 +565,11 @@ def plotting():
         test_set()
         xt.append(right)
         yt.append(len(word))
-    print(len(word))
+
     ax1 = plot.subplot(1,2,2)
     ax1.set_title("Removed words top (5,10,15,20,25) percentiles")
+    ax1.set_xlabel("Number of correct predictions")
+    ax1.set_ylabel("Number of total words")
     plot.plot(xt,yt)
 
     plot.show()
