@@ -1,7 +1,9 @@
 import numpy as np
 import pandas as pd
-from sklearn.naive_bayes import GaussianNB
-
+from sklearn import metrics
+import string
+import matplotlib.pyplot as plot
+import math
 data_frame = pd.read_csv("hns_2018_2019.csv")
 #lists to make it easy to use pandas
 Data = []          #complete dataset
@@ -46,20 +48,14 @@ def classify_words():
         #to accomplish this the replace method is used
         #to replace all excess characters such as commas
         #question marks and other chars that would differntiate same words
+
         i[0] = i[0].lower()
-        i[0] = i[0].replace(" ' ","")
-        i[0] = i[0].replace(" '","")
-        i[0] = i[0].replace("' ", "")
-        i[0] = i[0].replace("(","")
-        i[0] = i[0].replace(")","")
-        i[0] = i[0].replace(":","")
-        i[0] = i[0].replace("?"," ? ")
-        i[0] = i[0].replace(",","")
-        i[0] = i[0].replace(".","")
-        i[0] = i[0].replace("]","")
-        i[0] = i[0].replace("[","")
-        i[0] = i[0].replace("!"," ! ")
-        i[0] = i[0].replace('/'," ")
+        i[0] = i[0].replace("?", " QUESTIONMARK ")
+        i[0] = i[0].replace("?", " EXCLAMATIONMARK ")
+        "".join(char for char in i[0] if char not in string.punctuation)
+        "".join(char for char in i[0] if char not in string.punctuation)
+
+
         #where the actual splitting happens
 
         temp = i[0].split()
@@ -171,22 +167,14 @@ def test_set():
     cak1 = 0
     csh1= 0
     cpo1 = 0
+    all = 0
     with open("baseline-result.txt", 'w', encoding='utf-8') as text_file:
         for t in t_set:
             t[0] = t[0].lower()
-            t[0] = t[0].replace(" ' ","")
-            t[0] = t[0].replace(" '","")
-            t[0] = t[0].replace("' ", "")
-            t[0] = t[0].replace("(","")
-            t[0] = t[0].replace(")","")
-            t[0] = t[0].replace(":","")
-            t[0] = t[0].replace("?"," ? ")
-            t[0] = t[0].replace(",","")
-            t[0] = t[0].replace(".","")
-            t[0] = t[0].replace("]","")
-            t[0] = t[0].replace("[","")
-            t[0] = t[0].replace("!"," ! ")
-            t[0] = t[0].replace('/'," ")
+            t[0] = t[0].replace("?"," QUESTION")
+            t[0]
+            "".join(char for char in t[0] if char not in string.punctuation)
+
             temp = t[0].split()
             prob_story = []
             prob_ask = []
@@ -196,7 +184,9 @@ def test_set():
             prob_ask.append(np.math.log10((ask) / (story + ask + poll + show)))
             prob_show.append(np.math.log10((show) / (story + ask + poll + show)))
             prob_poll.append(np.math.log10((poll + 0.5 )/ (story + ask + poll + show)))
+            all = all+1
             for test_words in temp:
+
 
                 if test_words in word:
                     index = txt_list[word.index(test_words)]
@@ -204,6 +194,7 @@ def test_set():
                     prob_ask.append(np.math.log10(index[5]))
                     prob_show.append(np.math.log10(index[7]))
                     prob_poll.append(np.math.log10(index[9]))
+
                 else:
                     continue
 
@@ -254,7 +245,7 @@ def test_set():
                 cpo1 = cpo1+1
     print("Prediction: " + "Story: " + str(cst) + " Show_hn: " + str(csh) + " Ask_hn: " + str(cak)+" Poll: " + str(cpo))
     print("Actual:     " + "Story: " + str(cst1) + " Show_hn: " + str(csh1) + " Ask_hn: " + str(cak1)+" Poll: " + str(cpo1))
-    print("Correct predictions (out 5000): "+str(right))
+    print("Correct predictions "+"(out of "+str(all)+") "+str(right))
     for i in txt_list:
         txt_list_new.append(i)
 
@@ -286,19 +277,10 @@ def test_set_exp():
     with open("stopword-result.txt", 'w', encoding='utf-8') as text_file:
         for t in t_set:
             t[0] = t[0].lower()
-            t[0] = t[0].replace(" ' ","")
-            t[0] = t[0].replace(" '","")
-            t[0] = t[0].replace("' ", "")
-            t[0] = t[0].replace("(","")
-            t[0] = t[0].replace(")","")
-            t[0] = t[0].replace(":","")
-            t[0] = t[0].replace("?"," ? ")
-            t[0] = t[0].replace(",","")
-            t[0] = t[0].replace(".","")
-            t[0] = t[0].replace("]","")
-            t[0] = t[0].replace("[","")
-            t[0] = t[0].replace("!"," ! ")
-            t[0] = t[0].replace('/'," ")
+            t[0] = t[0].replace("?", " QUESTIONMARK ")
+            t[0] = t[0].replace("!","EXCLAMATIONMARK ")
+            "".join(char for char in t[0] if char not in string.punctuation)
+
             temp = t[0].split()
             prob_story = []
             prob_ask = []
@@ -437,19 +419,10 @@ def test_set_exp2():
     with open("stopword-result.txt", 'w', encoding='utf-8') as text_file:
         for t in t_set:
             t[0] = t[0].lower()
-            t[0] = t[0].replace(" ' ","")
-            t[0] = t[0].replace(" '","")
-            t[0] = t[0].replace("' ", "")
-            t[0] = t[0].replace("(","")
-            t[0] = t[0].replace(")","")
-            t[0] = t[0].replace(":","")
-            t[0] = t[0].replace("?"," ? ")
-            t[0] = t[0].replace(",","")
-            t[0] = t[0].replace(".","")
-            t[0] = t[0].replace("]","")
-            t[0] = t[0].replace("[","")
-            t[0] = t[0].replace("!"," ! ")
-            t[0] = t[0].replace('/'," ")
+            t[0] = t[0].replace("?", " QUESTIONMARK ")
+            t[0] = t[0].replace("!", "EXCLAMATIONMARK ")
+            "".join(char for char in t[0] if char not in string.punctuation)
+
             temp = t[0].split()
             prob_story = []
             prob_ask = []
@@ -552,3 +525,70 @@ experiment_2()
 
 
 #PERFORMANCE EXPERIMENT
+def plotting():
+
+    bottom = [1,5,10,15,20]
+    global right
+    xb = []
+    yb = []
+    for i in range(5):
+        right = 0
+
+        for j in txt_list:
+            if bottom[i]>=(j[2]+j[4]+j[6]+j[8]):
+                txt_list.remove(j)
+                word.remove(j[1])
+        test_set()
+        xb.append(right)
+        yb.append(len(txt_list))
+    ax = plot.subplot(1,2,1)
+    ax.set_title("Removed words <1,5,10,15,20")
+    plot.plot(xb,yb)
+
+    top = [5,10,15,20,25]
+    the_ole_switcheroo()
+    word_num = []
+    for i in txt_list:
+        word_num.append(i[2]+i[4]+i[6]+i[8])
+        list.sort(word_num)
+    xt = []
+    yt = []
+    for i in range(5):
+        right = 0
+        percent = (100-math.ceil((top[i]/100))*len(word_num))
+        for j in txt_list:
+            if word_num[percent]<=(j[2]+j[4]+j[6]+j[8]):
+                txt_list.remove(j)
+                word.remove(j[1])
+        test_set()
+        xt.append(right)
+        yt.append(len(word))
+    print(len(word))
+    ax1 = plot.subplot(1,2,2)
+    ax1.set_title("Removed words top (5,10,15,20,25) percentiles")
+    plot.plot(xt,yt)
+
+    plot.show()
+
+plotting()
+
+
+
+#CODE FOR DEMO
+def new_data_classify():
+    global t_set
+    t_set = []
+    global right
+    right = 0
+    df = pd.read_csv("newdata.csv")
+    new_t= df.Title
+    new_pt = df['Post Type']
+    for i in range(len(new_t)):
+        t_set.append([str(new_t[i]), new_pt[i]])
+
+    test_set()
+nextphase = input("Press Enter for next phase ")
+#function call below activates this function
+#caution this file may not exist and thus may cause errors if called
+new_data_classify()
+

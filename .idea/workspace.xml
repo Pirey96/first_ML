@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="05cf1765-787b-45f0-8a62-6d341ed000b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baseline-result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/baseline-result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stopword-model.txt" beforeDir="false" afterPath="$PROJECT_DIR$/stopword-model.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stopword-result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/stopword-result.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vocabulary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vocabulary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordlength-model.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wordlength-model.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +52,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Comp472a2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -46,7 +67,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\pirey\anaconda3\envs\COEN472as2\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\pirey\anaconda3\envs\COMP472a1\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -95,31 +116,42 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591307998571">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591960968537">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591307998571" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1591307996694">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591960968537" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1591955821262">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591307996694" />
-    <state width="936" height="360" key="GridCell.Tab.0.bottom" timestamp="1591797168747">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591955821262" />
+    <state width="936" height="313" key="GridCell.Tab.0.bottom" timestamp="1591992222660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="360" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591797168747" />
-    <state width="936" height="360" key="GridCell.Tab.0.center" timestamp="1591797168747">
+    <state width="936" height="313" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591992222660" />
+    <state width="936" height="313" key="GridCell.Tab.0.center" timestamp="1591992222660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="360" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591797168747" />
-    <state width="936" height="360" key="GridCell.Tab.0.left" timestamp="1591797168747">
+    <state width="936" height="313" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591992222660" />
+    <state width="936" height="313" key="GridCell.Tab.0.left" timestamp="1591992222660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="360" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591797168747" />
-    <state width="936" height="360" key="GridCell.Tab.0.right" timestamp="1591797168747">
+    <state width="936" height="313" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591992222660" />
+    <state width="936" height="313" key="GridCell.Tab.0.right" timestamp="1591992222660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="360" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591797168747" />
+    <state width="936" height="313" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591992222660" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1591795878313">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -136,10 +168,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591795878313" />
-    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591792589590">
+    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591989023332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591792589590" />
+    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591989023332" />
     <state x="1223" y="136" width="713" height="708" key="dock-window-1" timestamp="1591751044826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
